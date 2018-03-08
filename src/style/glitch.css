@@ -1,0 +1,48 @@
+svg {
+  display: none; }
+
+.distortion {
+  margin: auto;
+  text-align: center;
+  animation: transform 2.5s steps(10) infinite, glitch 3.2s infinite; }
+  .distortion__hello {
+    font-weight: 100;
+    color: #E0E6DB; }
+  .distortion__world {
+    font-weight: 400;
+    color: #d35c43; }
+  .distortion__edit {
+    font-size: 0.5em;
+    font-weight: 100;
+    color: #3B403A; }
+
+@keyframes glitch {
+  45% {
+    filter: none; }
+  46% {
+    filter: url(#dist-01); }
+  47% {
+    filter: url(#dist-02); }
+  48% {
+    filter: url(#dist-03); }
+  50% {
+    filter: none; }
+  95% {
+    filter: none; }
+  96% {
+    filter: url(#dist-02); }
+  97% {
+    filter: url(#dist-04); } }
+@keyframes transform {
+  0% {
+    transform: translate(-50%, -50%) skew(-10deg) scale(2.05); }
+  1% {
+    transform: none; }
+  88% {
+    transform: none; }
+  89% {
+    transform: translate(5%, 10%) scale(1.05); }
+  90% {
+    transform: none; } }
+
+/*# sourceMappingURL=glitch.css.map */

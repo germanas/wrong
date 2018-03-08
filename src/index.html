@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/glitch.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <script src="http://threejs.org/build/three.min.js"></script>
+
+    <script src="http://threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+    <script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
+    <script src="http://threejs.org/examples/js/loaders/SVGLoader.js"></script>
+
+    <script src="js/js.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
+<body>
+
+<div class="intro-slide">
+    <div class="distortion">
+    <img src="logo.svg"id="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="dist-01">
+                    <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="8" result="noise" seed="0"/>
+                    <feConvolveMatrix in="noise" order="3" result="snoise"
+                                      kernelMatrix="
+         0  -1   0
+        -1   5  -1
+         0  -1   0
+      "/>
+                    <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
+                </filter>
+                <filter id="dist-02">
+                    <feTurbulence id="turbulence" baseFrequency="0.2" numOctaves="8" result="noise" seed="1"/>
+                    <feConvolveMatrix in="noise" order="3" result="snoise"
+                                      kernelMatrix="
+         0  -1   0
+        -1   5  -1
+         0  -1   0
+      "/>
+                    <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
+                </filter>
+                <filter id="dist-03">
+                    <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2"/>
+                    <feConvolveMatrix in="noise" order="3" result="snoise"
+                                      kernelMatrix="
+         0  -1   0
+        -1   5  -1
+         0  -1   0
+      "/>
+                    <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
+                </filter>
+                <filter id="dist-04">
+                    <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2" type="FractalNoise"/>
+                    <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    <div id="intro">
+        <script src="js/wave.js"></script></div>
+
+    <img src="down-icon.svg"id="down-icon">
+
+</div>
+    <div class="second-slide"></div>
+</div>
+
+</body>
+</html>
