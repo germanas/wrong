@@ -81,7 +81,6 @@ function onDocumentTouchMove( event ) {
     }
 }
 
-//
 function animate() {
     requestAnimationFrame( animate );
     render();
@@ -89,8 +88,6 @@ function animate() {
 }
 function render() {
 
-
-//var svg = document.getElementById('mySVG');
     camera.position.x += ( mouseX - camera.position.x ) * .05;
     camera.position.y += ( - mouseY - camera.position.y ) * .05;
     camera.lookAt( scene.position );
@@ -106,14 +103,6 @@ function render() {
     }
     renderer.render( scene, camera );
     count += 0.1;
-
-//    var img = new Image();
-//    img.onload = function() {
-//        ctx.drawImage(img, 100, 100);
-//        console.log(ctx)
-
-  //  }
-  //  img.src = "logo.svg";
 
 }
 
